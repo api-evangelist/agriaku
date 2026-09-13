@@ -1,0 +1,20 @@
+generated: '2026-09-12'
+method: searched
+source: https://agriaku.com/
+note: >-
+  AgriAku publishes no API plans, no API pricing page, and no developer tiers of any
+  kind. It sells agricultural inputs to partner shops through its Android apps; the
+  only commercial surface on the public site is partner registration
+  (https://agriaku.com/mitra/), which is a merchant onboarding flow, not an API plan.
+  There is nothing to price because there is no public API product - this is an honest
+  zero, not an unchecked field.
+plan_count: 0
+plans: []
+pricing_page: null
+sources_checked:
+- url: https://agriaku.com/
+  status: 200
+- url: https://agriaku.com/mitra/
+  status: 200
+- url: https://agriaku.com/about-us/
+  status: 200

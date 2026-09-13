@@ -1,0 +1,138 @@
+generated: '2026-09-12'
+method: probed
+source: live HTTP probes of every AgriAku host known to this record (registrable domain,
+  www, the partner/vendor web properties, the self-hosted Odoo ERP, the agreement CDN
+  host, and the dangling api. host) for the named /.well-known/ document set
+note: >-
+  Every named path missed on every host. agriaku.com and vendor.agriaku.com return a
+  real 404. mitra.agriaku.com answers 200 with its single-page marketing shell for any
+  path under /.well-known/ - that is an SPA catch-all, not a document, and is recorded
+  as a miss. agreement.agriaku.com is an S3/CloudFront origin that answers 403
+  AccessDenied for unlisted keys. api.agriaku.com could not be probed at all: it is a
+  dangling CNAME to agriaku-api-1367161307.ap-southeast-1.elb.amazonaws.com, an ELB
+  that no longer resolves to any address. NO WellKnown or SecurityTxt pointer is
+  emitted from this file - it documents an absence, not a presence.
+hosts:
+- host: agriaku.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: www.agriaku.com
+  note: redirects to agriaku.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: vendor.agriaku.com
+  note: Next.js vendor portal
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: mitra.agriaku.com
+  note: >-
+    SPA catch-all - every path answers 200 with the same 3,019-byte app-download landing
+    page. Treated as a miss, not a hit.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/html
+    verdict: html-shell-not-a-document
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: text/html
+    verdict: html-shell-not-a-document
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: text/html
+    verdict: html-shell-not-a-document
+  - path: /.well-known/api-catalog
+    status: 200
+    content_type: text/html
+    verdict: html-shell-not-a-document
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    content_type: text/html
+    verdict: html-shell-not-a-document
+  - path: /.well-known/agent-card.json
+    status: 200
+    content_type: text/html
+    verdict: html-shell-not-a-document
+  - path: /.well-known/agent.json
+    status: 200
+    content_type: text/html
+    verdict: html-shell-not-a-document
+- host: erp.agriaku.com
+  note: self-hosted Odoo instance (vendor software running under AgriAku's name)
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: agreement.agriaku.com
+  note: object-storage origin, 403 AccessDenied on unlisted keys
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+  - path: /.well-known/api-catalog
+    status: 403
+  - path: /.well-known/agent-card.json
+    status: 403
+  - path: /.well-known/agent.json
+    status: 403
+- host: api.agriaku.com
+  note: >-
+    Not probeable. DNS returns a CNAME to
+    agriaku-api-1367161307.ap-southeast-1.elb.amazonaws.com, which has no A record -
+    the load balancer behind the record is gone, so no HTTP request can be made.
+  documents: []
+summary:
+  hosts_probed: 7
+  documents_found: 0
+  security_txt: false
+  api_catalog: false
+  agent_card: false

@@ -64,5 +64,26 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Agriaku is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://equityzen.com/company/agriaku
+AgriAku (PT Agriaku Digital Indonesia) is a Jakarta-based agritech company founded in 2021
+that digitizes the distribution of agricultural inputs — seeds, fertilizers, crop protection,
+nutrients and farm tools — to Indonesia's network of independent farm-supply shops (toko tani).
+Partner shops order from a catalog of more than 15,000 products through the AgriAku Mitra
+Android app; separate vendor, seller and courier applications cover the rest of the supply
+chain. The company reports more than 23,390 partners across Indonesia.
+
+## API surface
+
+**AgriAku publishes no public API.** A full contract-discovery pass on 2026-09-12 probed the
+registrable domain, `www`, and every host in AgriAku's certificate-transparency record, and
+found no developer portal, no API reference, no OpenAPI/Swagger/AsyncAPI/GraphQL/Postman
+artifact, no MCP server, no A2A agent card, no `llms.txt`, and no document at any named
+`/.well-known/` path. No client SDK exists in npm, PyPI, RubyGems or crates.io. `api.agriaku.com`
+is a dangling CNAME to an AWS load balancer that no longer resolves. Its web properties are
+gated first-party applications, not developer surfaces.
+
+- Website — <https://agriaku.com/>
+- About — <https://agriaku.com/about-us/>
+- Partnership — <https://agriaku.com/mitra/>
+- Blog — <https://agriaku.com/blog/>
+- Contact — <https://agriaku.com/contact-us/>
+- GitHub — <https://github.com/Agriaku>

@@ -1,17 +1,36 @@
 aid: agriaku
-name: Agriaku
-description: 'Agriaku is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+name: AgriAku
+description: 'AgriAku (PT Agriaku Digital Indonesia) is a Jakarta-based agritech company
+  founded in 2021 that digitizes the distribution of agricultural inputs - seeds, fertilizers,
+  crop protection, nutrients and farm tools - to Indonesia''s network of independent
+  farm-supply shops (toko tani). Partner shops order from a catalog of more than 15,000
+  agricultural products through the AgriAku Mitra Android app, while separate vendor,
+  seller and courier applications cover the rest of the supply chain. The company reports
+  more than 23,390 partners across Indonesia and has raised roughly USD 46M from Alpha
+  JWC Ventures, Go-Ventures and MDI Ventures. AgriAku operates no public developer program:
+  every API host it runs is a private backend for its own first-party mobile and web
+  applications.'
+image: https://agriaku.com/wp-content/uploads/2021/06/Final-Logo-Highres-full-color-min.png
 url: https://raw.githubusercontent.com/api-evangelist/agriaku/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: 'enrichment pass 2026-09-12: full contract discovery run across
+  19 certificate-transparency subdomains, no public API surface found'
 specificationVersion: '0.20'
 created: '2026-09-12'
 modified: '2026-09-12'
 tags:
 - Company
+- Agriculture
+- AgTech
+- E-Commerce
+- Marketplace
+- Supply Chain
+- Distribution
+- Indonesia
+- B2B
+- Mobile
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +39,52 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://equityzen.com/company/agriaku
+  url: https://agriaku.com/
+- type: About
+  url: https://agriaku.com/about-us/
+- type: Blog
+  url: https://agriaku.com/blog/
+- type: BlogRSS
+  url: https://agriaku.com/feed/
+- type: Support
+  url: https://agriaku.com/contact-us/
+- type: TermsOfService
+  url: https://agriaku.com/terms-of-service
+- type: PrivacyPolicy
+  url: https://agriaku.com/privacy-policy
+- type: GitHubOrganization
+  url: https://github.com/Agriaku
+- type: Partners
+  url: https://agriaku.com/mitra/
+- type: DomainSecurity
+  url: security/agriaku-domain-security.yml
+- type: Plans
+  url: plans/agriaku-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/agriaku-rate-limits.yml
+- type: LLMsTxt
+  url: llms/agriaku-llms.txt
+x-enrichment:
+  date: '2026-09-12'
+  status: minimal
+  artifacts_added: 6
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    AgriAku ships only first-party end-user apps (Mitra, Logistik Kurir, a vendor
+    platform) - there is no developer portal, API reference or published contract on
+    agriaku.com or on any of the 19 subdomains in its certificate-transparency record,
+    every spec path 404s, and the one API host it ever named, api.agriaku.com, is now a
+    dangling CNAME to an AWS load balancer that no longer resolves.
+  evidence:
+  - url: https://agriaku.com/openapi.json
+    status: 404
+  - url: https://agriaku.com/.well-known/api-catalog
+    status: 404
+  - url: https://agriaku.com/wp-json/
+    status: 401
+  - url: https://agriaku.com/llms.txt
+    status: 404
+  checked: '2026-09-12'

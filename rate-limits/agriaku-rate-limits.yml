@@ -1,0 +1,18 @@
+generated: '2026-09-12'
+method: searched
+source: https://agriaku.com/
+note: >-
+  No rate limits are documented because no API is documented. AgriAku has no developer
+  portal, no API reference and no published contract, so there is no stated quota,
+  window, burst allowance or 429 behaviour to record, and no response headers can be
+  observed because the only API host (api.agriaku.com) is a dangling CNAME that no
+  longer resolves. Honest zero.
+limit_count: 0
+rate_limits: []
+response_headers: []
+sources_checked:
+- url: https://agriaku.com/
+  status: 200
+- url: https://api.agriaku.com/
+  status: null
+  note: DNS resolution failed - CNAME target ELB has no A record

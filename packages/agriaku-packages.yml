@@ -1,0 +1,40 @@
+generated: '2026-09-12'
+method: searched
+source: >-
+  registry.npmjs.org search, pypi.org, rubygems.org, crates.io, GitHub org
+  https://github.com/Agriaku, and agriaku.com (no developer or SDK page exists)
+note: >-
+  AgriAku publishes no client libraries. Every public registry search for "agriaku"
+  returned zero packages, and the company's GitHub organization holds only forks of
+  third-party Flutter/Kotlin libraries used inside its own Android apps plus one
+  internal data-science script - no first-party SDK, no published artifact, nothing
+  versioned for external consumers. Recorded as a checked zero, not an unchecked gap.
+package_count: 0
+packages: []
+registries_searched:
+- registry: npm
+  query: https://registry.npmjs.org/-/v1/search?text=agriaku
+  results: 0
+- registry: pypi
+  query: https://pypi.org/pypi/agriaku/json
+  status: 404
+  results: 0
+- registry: rubygems
+  query: https://rubygems.org/api/v1/gems/agriaku.json
+  status: 404
+  results: 0
+- registry: crates.io
+  query: https://crates.io/api/v1/crates?q=agriaku
+  results: 0
+github_organization:
+  url: https://github.com/Agriaku
+  status: 200
+  created: '2021-06-17'
+  public_repos: 9
+  first_party_sdk: false
+  note: >-
+    Eight of the nine public repositories are forks of upstream Flutter/Dart/Kotlin
+    packages (camera, pdfx, flutterlocation, internet_file, tutorial_coach_mark,
+    konform, drawable, android_id); the ninth, dsp_filtering_shapefile, is an internal
+    script that turns a database query into a shapefile. None is a client library for
+    an AgriAku API.
